@@ -1,5 +1,7 @@
 package com.neelbundela.job_portal_api.controller;
 
+import com.neelbundela.job_portal_api.dto.LoginRequest;
+import com.neelbundela.job_portal_api.dto.LoginResponse;
 import com.neelbundela.job_portal_api.dto.RegistrationRequest;
 import com.neelbundela.job_portal_api.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +22,11 @@ public class AuthController {
     public ResponseEntity<String> register(
             @RequestBody RegistrationRequest registrationRequest){
         return ResponseEntity.ok(authService.register(registrationRequest));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
+
+        return ResponseEntity.ok(authService.login(loginRequest));
     }
 }
