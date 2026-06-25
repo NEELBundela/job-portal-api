@@ -43,9 +43,9 @@ public class SecurityBeans {
                         ))
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/Auth/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/Auth/recruiter/**").hasRole("RECRUITER")
-                        .requestMatchers("/Auth/CANDIDATE/**").hasRole("CANDIDATE")
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/recruiter/**").hasRole("RECRUITER")
+                        .requestMatchers("/api/candidate/**").hasRole("CANDIDATE")
                         .anyRequest().authenticated())
                 .addFilterBefore(
                         jwtAuthenticationFilter,
