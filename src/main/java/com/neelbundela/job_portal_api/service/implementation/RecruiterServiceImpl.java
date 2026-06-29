@@ -17,7 +17,7 @@ public class RecruiterServiceImpl implements RecruiterService {
     private final CompanyRepository companyRepository;
     @Override
     public Company createCompany(String email, CompanyRequest companyRequest) {
-        User recruiter=userRepository.findByEmail(email).orElseThrow();
+        User recruiter=userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found with email: " + email));
 
         if(companyRepository.findByRecruiter(recruiter).isPresent()){
             throw  new RuntimeException("Company already Exists");
