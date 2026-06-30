@@ -25,6 +25,7 @@ public class CandidateServiceImpl implements CanidateService {
                 .skills(candidateProfileRequest.getSkills())
                 .experience(candidateProfileRequest.getExperience())
                 .education(candidateProfileRequest.getEducation())
+                .active(candidateProfileRequest.getActive())
                 .user(user)
                 .build();
 
@@ -48,6 +49,7 @@ public class CandidateServiceImpl implements CanidateService {
         candidateProfile.setSkills(candidateProfileRequest.getSkills());
         candidateProfile.setExperience(candidateProfileRequest.getExperience());
         candidateProfile.setEducation(candidateProfileRequest.getEducation());
+        candidateProfile.setActive(candidateProfileRequest.getActive());
         return candidateProfileRepository.save(candidateProfile);
     }
 }

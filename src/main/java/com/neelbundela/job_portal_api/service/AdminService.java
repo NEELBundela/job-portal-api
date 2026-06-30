@@ -14,7 +14,7 @@ public interface AdminService {
 
     User updateUserStatus(
             Long userId,
-            boolean active
+            Boolean active
     );
 
     List<Job> getAllJobs();

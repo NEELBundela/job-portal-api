@@ -11,4 +11,6 @@ public class CandidateProfileRequest {
     private String experience;
 
     private String education;
+
+    private Boolean active;
 }
